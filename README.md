@@ -5,7 +5,7 @@ Node.js server for querying the WordNet interlingual index (ILI)
 
 1. run `sh setup.sh` to download the ILI index in this directory
 2. install Virtuoso: `sudo apt-get install virtuoso-opensource`
-3. add your data location to `DirsAllowed` in `virtuoso.ini` and add a `DefaultGraph`. Then make sure to restart the virtuoso instance, e.g., by running: `/usr/bin/virtuoso-t -f -c /etc/virtuoso-opensource-6.1/virtuoso.ini &`
+3. add your data location to `DirsAllowed` in `virtuoso.ini` and add a `DefaultGraph`. Then make sure to restart the virtuoso instance: by running `sudo systemctl status virtuoso-opensource-6.1.service` or a similar command.
 4. update the paths in the files `server.js`, `commands.txt` and `reload.sh` to correspond to your local setup
 5. run `sh reload.sh` to load your current ILI files
 6. run `nodejs server.js` to start the server on port 3333
