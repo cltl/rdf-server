@@ -1,5 +1,4 @@
-sparql delete where { graph <http://globalwordnet.org> { ?a  ?b ?c } };
-sparql delete where { graph <http://gwn.org> { ?a  ?b ?c } };
+SPARQL DROP SILENT GRAPH <http://globalwordnet.org>;
 delete from DB.DBA.load_list;
 ld_dir ('/import/cltl/tmp/semweb/ili-server/ili/', '*.ttl', 'http://globalwordnet.org');
 rdf_loader_run();
