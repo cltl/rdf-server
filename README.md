@@ -10,4 +10,4 @@ Below is a list of steps tested on Ubuntu 18.04. The exact commands might differ
 3. add your data location to `DirsAllowed` in `virtuoso.ini` and add a `DefaultGraph`. Then make sure to restart the virtuoso instance: by running `sudo systemctl status virtuoso-opensource-6.1.service` or a similar command.
 4. update the paths in the files `server.js`, `commands.txt` and `reload.sh` to correspond to your local setup
 5. run `sh reload.sh` to load your current ILI files
-6. run `nodejs server.js` to start the server on port 3333
+6. run `nodejs server.js` to start the server on port 3333 - ideally set this up as a service and/or with PM2 process manager.
