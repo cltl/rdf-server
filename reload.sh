@@ -1,4 +1,4 @@
-cd /scratch/fii800/ili
+cd ili
 git pull
-cd /usr/local/virtuoso-opensource/bin/
-./isql localhost:1111 dba dba /scratch/fii800/gwn/commands.txt
+cd /usr/bin/
+./isql-vt localhost:1111 dba filip /import/cltl/tmp/semweb/ili-server/commands.txt

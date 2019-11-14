@@ -1,0 +1,26 @@
+{
+  "name": "ili-server",
+  "version": "1.0.0",
+  "description": "Node.js server for querying the WordNet interlingual index (ILI)",
+  "main": "server.js",
+  "dependencies": {
+    "exec": "^0.2.1",
+    "express": "^4.17.1",
+    "js-htmlencode": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cltl/ili-server.git"
+  },
+  "author": "Filip Ilievski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cltl/ili-server/issues"
+  },
+  "homepage": "https://github.com/cltl/ili-server#readme"
+}

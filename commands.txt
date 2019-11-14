@@ -1,6 +1,6 @@
 sparql delete where { graph <http://globalwordnet.org> { ?a  ?b ?c } };
 sparql delete where { graph <http://gwn.org> { ?a  ?b ?c } };
 delete from DB.DBA.load_list;
-ld_dir ('/scratch/fii800/ili/', '*.ttl', 'http://globalwordnet.org');
+ld_dir ('/import/cltl/tmp/semweb/ili-server/ili/', '*.ttl', 'http://globalwordnet.org');
 rdf_loader_run();
 exit;
