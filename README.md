@@ -1,5 +1,5 @@
-# ili-server
-Node.js server for querying the WordNet interlingual index (ILI)
+# rdf-server
+Node.js server for querying multiple RDF collctions: the WordNet interlingual index (ILI), Dutch FrameNet and Dutch WordNet.
 
 ## Setting up your own ILI server
 
@@ -11,3 +11,5 @@ Below is a list of steps tested on Ubuntu 18.04. The exact commands might differ
 4. update the paths in the files `server.js`, `commands.txt` and `reload.sh` to correspond to your local setup
 5. run `sh reload.sh` to load your current ILI files
 6. run `nodejs server.js` to start the server on port 3333 - ideally set this up as a service and/or with PM2 process manager.
+
+*Note:* The reload is currently done manually - perhaps set up a cron-like job to clone it manually.
