@@ -1,16 +1,19 @@
 var exec = require('exec');
 var request=require('request');
-var htmlEncode = require('js-htmlencode');
 
 var express = require('express'),
-    iliRouter = express.Router(),
     app = express();
+
+
+var iliRouter = express.Router();
+var dfnRouter = express.Router();
+var dwnRouter = express.Router();
 
 var PORT=3333;
 
-function describe_resource(q, callback){
-        var endpoint = 'http://localhost:8890/sparql?format=text%2Fntriples&query=';
-        var query = "DESCRIBE <http://globalwordnet.org/ili/" + q + ">";
+function describe_resource(base_uri, q, callback){
+	var endpoint = 'http://localhost:8890/sparql?format=text%2Fntriples&query=';
+        var query = "DESCRIBE <" + base_uri + q + ">";
         request(endpoint + encodeURIComponent(query), function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                         callback(body); // Show the HTML for the Google homepage.
@@ -19,8 +22,24 @@ function describe_resource(q, callback){
 }
 
 iliRouter.get('/:id', function(req, res){
-        var data="";
-        describe_resource(req.params.id, function(results){
+	var base_uri="http://globalwordnet.org/ili/";
+        describe_resource(base_uri, req.params.id, function(results){
+                res.header("Content-Type", "text/plain");
+                res.send(results);
+        });
+});
+
+dfnRouter.get('/:id', function(req, res){
+        var base_uri="http://rdf.cltl.nl/dfn/";
+        describe_resource(base_uri, req.params.id, function(results){
+                res.header("Content-Type", "text/plain");
+                res.send(results);
+        });
+});
+
+dwnRouter.get('/:id', function(req, res){
+        var base_uri="http://rdf.cltl.nl/dwn/";
+        describe_resource(base_uri, req.params.id, function(results){
                 res.header("Content-Type", "text/plain");
                 res.send(results);
         });
@@ -40,6 +59,8 @@ iliRouter.post('/webhook', function(req, res){
 })
 
 app.use('/ili', iliRouter);
+app.use('/dfn', dfnRouter);
+app.use('/dwn', dwnRouter);
 
 app.listen(PORT);
 console.log('Server started on port ' + PORT);
