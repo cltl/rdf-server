@@ -1,5 +1,5 @@
 # rdf-server
-Node.js server for querying multiple RDF collctions: the WordNet interlingual index (ILI), Dutch FrameNet and Dutch WordNet.
+Node.js server for querying multiple RDF graphs: the WordNet interlingual index (ILI), Dutch FrameNet and Dutch WordNet.
 
 ## Setting up your own ILI server
 
