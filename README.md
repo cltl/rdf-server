@@ -1,4 +1,4 @@
-# ili-server
+# rdf-server
 Node.js server for querying the WordNet interlingual index (ILI)
 
 ## Setting up your own ILI server
