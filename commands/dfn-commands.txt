@@ -1,0 +1,5 @@
+SPARQL DROP SILENT GRAPH <http://dutchframenet.nl>;
+delete from DB.DBA.load_list;
+ld_dir ('/import/cltl/tmp/semweb/rdf-server/data/dfn/', '*.ttl', 'http://dutchframenet.nl');
+rdf_loader_run();
+exit;

@@ -1,5 +1,5 @@
 SPARQL DROP SILENT GRAPH <http://globalwordnet.org>;
 delete from DB.DBA.load_list;
-ld_dir ('/import/cltl/tmp/semweb/ili-server/ili/', '*.ttl', 'http://globalwordnet.org');
+ld_dir ('/import/cltl/tmp/semweb/rdf-server/data/ili/', '*.ttl', 'http://globalwordnet.org');
 rdf_loader_run();
 exit;

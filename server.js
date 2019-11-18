@@ -23,6 +23,7 @@ function describe_resource(base_uri, q, callback){
 
 iliRouter.get('/:id', function(req, res){
 	var base_uri="http://globalwordnet.org/ili/";
+	console.log("DFN uri " + base_uri + ',' + req.params.id);
         describe_resource(base_uri, req.params.id, function(results){
                 res.header("Content-Type", "text/plain");
                 res.send(results);
@@ -31,6 +32,7 @@ iliRouter.get('/:id', function(req, res){
 
 dfnRouter.get('/:id', function(req, res){
         var base_uri="http://rdf.cltl.nl/dfn/";
+	console.log("DFN uri " + base_uri + ',' + req.params.id);
         describe_resource(base_uri, req.params.id, function(results){
                 res.header("Content-Type", "text/plain");
                 res.send(results);
@@ -46,7 +48,7 @@ dwnRouter.get('/:id', function(req, res){
 });
 
 iliRouter.post('/webhook', function(req, res){
-        exec('/import/cltl/tmp/semweb/ili-server/reload.sh',
+        exec('/import/cltl/tmp/semweb/rdf-server/reload.sh',
         function (error, stdout, stderr) {
                 console.log('stdout: ' + stdout);
                 console.log('stderr: ' + stderr);
